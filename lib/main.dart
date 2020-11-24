@@ -40,8 +40,7 @@ class _HomeState extends State<Home> {
       if (imc < 18.6) {
         _infoText = 'Abaixo do peso (${imc.toStringAsPrecision(3)})';
       } else {
-        _infoText =
-            'Acima do peso! Você está gordo(a) (${imc.toStringAsPrecision(3)}) >:(';
+        _infoText = 'Acima do peso! (${imc.toStringAsPrecision(3)})';
       }
     });
   }
@@ -49,40 +48,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              Container(
-                height: 80,
-                child: DrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                  ),
-                  child: Text(
-                    'Drawer Header',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                    ),
-                  ),
-                ),
-              ),
-              ListTile(
-                leading: Icon(Icons.message),
-                title: Text('Messages'),
-              ),
-              ListTile(
-                leading: Icon(Icons.account_circle),
-                title: Text('Profile'),
-              ),
-              ListTile(
-                leading: Icon(Icons.settings),
-                title: Text('Settings'),
-              ),
-            ],
-          ),
-        ),
         appBar: AppBar(
           title: Text('Calculadora IMC'),
           centerTitle: true,
